@@ -1,0 +1,269 @@
+h2 {
+    text-align: center;
+}
+
+/* 定義 section */
+section {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 5% 0;
+    border-bottom: 1px solid lightgray;
+    transition: background-color 0.3s;
+}
+
+.switch-text {
+    font-family: system-ui;
+    font-weight: bold;
+    margin: 0 10px;
+}
+
+/* 隱藏原始的 checkbox */
+.switch input {
+    display: none;
+}
+
+/* 定義 switch 的外觀 */
+.switch {
+    display: flex;
+}
+
+.switch .slider {
+    position: relative;
+    display: inline-block;
+    width: 80px;
+    height: 30px;
+    background-color: #ccc;
+    border-radius: 20px;
+    transition: background-color 0.3s;
+}
+
+/* 定義 slider 上的圓點 */
+.switch .slider::before {
+    content: "";
+    position: absolute;
+    width: 26px;
+    height: 26px;
+    background-color: white;
+    border-radius: 50%;
+    left: 2px;
+    top: 2px;
+    transition: all 0.3s;
+}
+
+/* 定義 slider 被選中時圓點的位置 */
+.switch input:checked + .slider::before {
+    left: 52px;
+}
+
+.switch input:checked + .slider::after {
+    left: 2px;
+}
+
+/*** 定義 style_1 ***/
+/* 定義 switch 的外觀 */
+.style_1 .switch input + .slider {
+    background-color: #2196F3;
+}
+.style_1 .switch input:checked + .slider {
+    background-color: gray;
+}
+
+/* 定義 switch 文字設定 */
+.style_1:has(input:checked) .switch_false {
+    color: gray;
+}
+
+.style_1:has(input:checked) .switch_true {
+    color: black;
+}
+
+.style_1 .switch_true {
+    color: gray;
+}
+
+/* 定義 slide 的圖示 */
+.style_1 .switch .slider::after {
+    content: "";
+    position: absolute;
+    width: 26px;
+    height: 26px;
+    background-image: url("./images/icon_sun.png");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    border-radius: 50%;
+    left: 52px;
+    top: 2px;
+    transition: all 0.3s;
+}
+
+.style_1 .switch input:checked + .slider::after {
+    background-image: url("./images/icon_moon.png");
+}
+
+/* 定義 section 背景 */
+section.style_1:has(input:checked) {
+    background-color: rgba(84, 111, 125, 0.6);
+}
+
+/*** 定義 style_2 ***/
+/* 定義 switch 文字設定 */
+.style_2:has(input:checked) .switch_false {
+    color: gray;
+}
+
+.style_2:has(input:checked) .switch_true {
+    color: white;
+}
+
+.style_2 .switch_true {
+    color: gray;
+}
+
+/* 定義 slider 上的圓點 */
+.style_2 .switch .slider::before {
+    background: unset;
+    background-image: url("./images/icon_sunny.png");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.style_2 .switch input:checked + .slider::before {
+    background-image: url("./images/icon_moon.png");
+}
+
+/* 定義 switch 的外觀 */
+.style_2 .switch input + .slider {
+    background-color: #2196F3;
+}
+
+.style_2 .switch input:checked + .slider {
+    background-color: black;
+}
+
+/* 定義 slide 的圖示 */
+.style_2 .switch .slider::after {
+    content: "";
+    position: absolute;
+    width: 40px;
+    height: 26px;
+    background-image: url("./images/icon_cloud.png");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    border-radius: 50%;
+    left: 40px;
+    top: 1px;
+    transition: all 0.3s;
+}
+
+.style_2 .switch input:checked + .slider::after {
+    background-image: url("./images/icon_starry.png");
+    background-repeat: repeat;
+    background-size: contain;
+    width: 52px;
+}
+
+/* 定義 section 背景 */
+section.style_2:has(input:checked) {
+    background-color: black;
+}
+
+/*** 定義 style_3 ***/
+/* 定義 slider 上的圓點 */
+.style_3 .switch .slider::before {
+    background: unset;
+    background-image: url("./images/icon_error.png");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.style_3 .switch input:checked + .slider::before {
+    background-image: url("./images/icon_confirm.png");
+}
+
+/*** 定義 style_4 ***/
+.style_4 .switch {
+    width: 200px;
+    height: 65px;
+    position: relative;
+    background-color: #000000;
+    box-shadow: 0 -1px 0 rgba(255, 255, 255, 0.2) inset;
+    border-radius: 20px;
+    overflow: hidden;
+}
+
+.style_4 span {
+    position: absolute;
+    top: 6px;
+    width: 94px;
+    height: 54px;
+    background-color: #1c1d1f;
+    transition: transform 300ms ease, box-shadow 300ms ease;
+}
+
+.style_4 span:before {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 20px;
+    transition: text-shadow 800ms ease 100ms, color 800ms ease 100ms;
+}
+
+.style_4 span:last-of-type {
+    right: 6px;
+    border-top-right-radius: 18px;
+    border-bottom-right-radius: 18px;
+    transform-origin: left center;
+    box-shadow: -1px 1px 1px rgba(255, 255, 255, 0.1) inset, 2px 0 2px rgba(255, 255, 255, 0.05) inset;
+}
+
+.style_4 span:last-of-type:before {
+    content: "OFF";
+    color: #ff4847;
+    text-shadow: 0 0 24px rgba(255, 72, 71, 0.6);
+}
+
+.style_4 input:checked ~ span:last-of-type {
+    transform: perspective(2000px) rotateY(-40deg);
+    box-shadow: 1px 0 1px rgba(255, 255, 255, 0.1) inset, -4px 0 8px rgba(255, 255, 255, 0.1) inset, -1px 0 0 rgba(255, 255, 255, 0.1) inset, 10px 0 8px rgba(40, 42, 44, 0.9), 20px 0 8px rgba(28, 29, 31, 0.7), 30px 0 8px rgba(28, 29, 31, 0.4);
+}
+
+.style_4 input:checked ~ span:last-of-type:before {
+    color: rgba(0, 0, 0, 0.5);
+    text-shadow: 1px 4px 6px #1c1d1f, 0 0 0 #000000, 1px 4px 6px #1c1d1f;
+}
+
+.style_4 span:first-of-type {
+    left: 6px;
+    border-top-left-radius: 18px;
+    border-bottom-left-radius: 18px;
+    transform-origin: right center;
+    transform: perspective(2000px) rotateY(40deg);
+    box-shadow: -1px 0 1px rgba(255, 255, 255, 0.1) inset, 4px 0 8px rgba(255, 255, 255, 0.1) inset, 1px 0 0 rgba(255, 255, 255, 0.1) inset, -10px 0 8px rgba(40, 42, 44, 0.9), -20px 0 8px rgba(28, 29, 31, 0.7), -30px 0 8px rgba(28, 29, 31, 0.4);
+}
+
+.style_4 span:first-of-type:before {
+    content: "ON";
+    color: rgba(0, 0, 0, 0.5);
+    text-shadow: 1px 4px 6px #1c1d1f, 0 0 0 #000000, 1px 4px 6px #1c1d1f;
+}
+
+.style_4 input:checked ~ span:first-of-type {
+    transform: none;
+    box-shadow: 1px 1px 1px rgba(255, 255, 255, 0.1) inset, -2px 0 2px rgba(255, 255, 255, 0.05) inset;
+}
+
+.style_4 input:checked ~ span:first-of-type:before {
+    color: #93c913;
+    text-shadow: 0 0 24px rgba(147, 201, 19, 0.6);
+}
+
+/* 定義 section 背景 */
+.style_4 {
+    background-color: #000000;
+}
